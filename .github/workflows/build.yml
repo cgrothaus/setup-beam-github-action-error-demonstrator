@@ -1,0 +1,15 @@
+name: Build
+on: push
+
+jobs:
+  setup-beam:
+    name: Setup Beam
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          version-file: .tool-versions
+          version-type: strict
